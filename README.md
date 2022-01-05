@@ -3,7 +3,7 @@
 [![Website](https://img.shields.io/website?label=ryanmwakio.netlify.app&style=for-the-badge&url=https%3A%2F%2Fryanmwakio.netlify.app)](https://ryanmwakio.netlify.app)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ryanmwakio?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/ryanmwakio)
 
-## I'm a Developer, and a Learner
+## I'm a Developer
 
 - 🌱 I’m currently learning everything under the sun 🤣
 - 👯 I’m looking to collaborate with other developers
