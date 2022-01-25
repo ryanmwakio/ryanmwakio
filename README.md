@@ -5,7 +5,7 @@
 
 ## I'm a Developer
 
-- 🌱 I’m currently learning everything under the sun 🤣
+- 🌱 I’m currently learning some new development tools and aiming to create softwares that impact.
 - 👯 I’m looking to collaborate with other developers
 - 🥅 2022 Goals: Contribute more to Open Source projects
 - ⚡ Fun fact: I love to play basketball
