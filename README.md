@@ -1,8 +1,8 @@
 # 💫About Me :
 
 - 🌱 I’m currently learning some new development tools and aiming to create more software that impact.
-- 👯 I’m looking to collaborate with other developers
-- 🥅 2024 Goals: Contribute more to Open Source projects
+- 👯 I’m looking to collaborate with more developers
+- 🥅 2024 Goals: Open Source | Rollout some projects 
 
 ## 🌐Socials
 
