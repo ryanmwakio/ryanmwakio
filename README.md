@@ -2,9 +2,9 @@
 
 # Ryan Mwakio
 
-**Full-Stack JavaScript Developer**
+**Software Developer**
 
-*Building scalable web applications with modern JavaScript ecosystems*
+*Building scalable web applications with modern tooling ecosystems*
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=#FF7139)]([YOUR_PORTFOLIO_URL](https://ryanmwakio.vercel.app/))
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
