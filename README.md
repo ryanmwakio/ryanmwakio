@@ -1,82 +1,159 @@
-<div align="center">
+# Visit https://github.com/lowlighter/metrics#-documentation for full reference
+name: Metrics
+on:
+  # Schedule updates (each hour)
+  schedule: [{cron: "0 * * * *"}]
+  # Lines below let you run workflow manually and on each commit
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Your GitHub token
+          # The following scopes are required:
+          #  - public_access (default scope)
+          #  - read:user
+          #  - read:org
+          #  - repo
+          #  - public_repo
+          #  - read:project
+          # The following additional scopes may be required:
+          #  - read:org      (for organization related metrics)
+          #  - read:user     (for user related data)
+          #  - read:packages (for some packages related data)
+          #  - repo          (optional, if you want to include private repositories)
+          token: ${{ secrets.METRICS_TOKEN }}
 
-# Ryan Mwakio
+          # Options
+          user: ryanmwakio
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Africa/Nairobi
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+          plugin_activity: yes
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          plugin_activity_limit: 5
+          plugin_activity_load: 300
+          plugin_activity_timestamps: yes
+          plugin_activity_visibility: all
+          plugin_calendar: yes
+          plugin_calendar_limit: 6
+          plugin_code: yes
+          plugin_code_days: 3
+          plugin_code_lines: 12
+          plugin_code_load: 400
+          plugin_code_visibility: public
+          plugin_discussions: yes
+          plugin_discussions_categories: yes
+          plugin_followup: yes
+          plugin_followup_archived: yes
+          plugin_followup_indepth: yes
+          plugin_followup_sections: repositories
+          plugin_gists: yes
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: classic
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_from: 200
+          plugin_habits_languages_limit: 8
+          plugin_habits_languages_threshold: 0%
+          plugin_habits_trim: yes
+          plugin_introduction: yes
+          plugin_introduction_title: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_indepth: yes
+          plugin_languages_limit: 8
+          plugin_languages_other: yes
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          plugin_lines: yes
+          plugin_lines_history_limit: 6
+          plugin_lines_repositories_limit: 4
+          plugin_lines_sections: base
+          plugin_notable: yes
+          plugin_notable_from: organization
+          plugin_notable_indepth: yes
+          plugin_notable_repositories: yes
+          plugin_notable_self: yes
+          plugin_notable_types: commit
+          plugin_pagespeed: yes
+          plugin_pagespeed_pwa: yes
+          plugin_pagespeed_screenshot: yes
+          plugin_pagespeed_url: .user.website
+          plugin_people: yes
+          plugin_people_identicons: yes
+          plugin_people_limit: 24
+          plugin_people_shuffle: yes
+          plugin_people_size: 28
+          plugin_people_types: followers, following
+          plugin_projects: yes
+          plugin_projects_descriptions: yes
+          plugin_projects_limit: 4
+          plugin_reactions: yes
+          plugin_reactions_display: absolute
+          plugin_reactions_limit: 200
+          plugin_reactions_limit_discussions: 100
+          plugin_reactions_limit_discussions_comments: 100
+          plugin_reactions_limit_issues: 100
+          plugin_repositories: yes
+          plugin_repositories_order: featured, pinned, starred, random
+          plugin_repositories_pinned: 6
+          plugin_repositories_starred: 10
+          plugin_skyline: yes
+          plugin_skyline_compatibility: yes
+          plugin_skyline_frames: 60
+          plugin_skyline_quality: 0.5
+          plugin_skyline_settings: {
+  "url": "https://skyline.github.com/${login}/${year}",
+  "ready": "[...document.querySelectorAll('span')].map(span => span.innerText).includes('Share on Twitter')",
+  "wait": 1,
+  "hide": "button, footer, a"
+}
 
-**Software Developer**
-
-*Building scalable web applications with modern tooling ecosystems*
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=#FF7139)]([YOUR_PORTFOLIO_URL](https://ryanmwakio.vercel.app/))
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
-[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](YOUR_TWITTER_URL)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
-
-[![](https://visitcount.itsvg.in/api?id=ryanmwakio&icon=0&color=0)](https://visitcount.itsvg.in)
-
-</div>
-
----
-
-## About Me
-
-I'm a Full-Stack JavaScript developer passionate about crafting impactful, user-centered software. I specialize in building end-to-end web applications — from responsive frontends to robust backend APIs — with a focus on clean architecture and developer experience.
-
-- 🔭 &nbsp; Currently expanding my expertise in modern dev tooling and distributed systems
-- 🌱 &nbsp; 2025 Goals: Contribute to open source & ship meaningful side projects
-- 💬 &nbsp; Ask me about **JavaScript, Node.js, React, or Vue**
-- ⚡ &nbsp; I believe great software is built at the intersection of performance and simplicity
-
----
-
-## 💻 Tech Stack
-
-**Frontend**
-
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Next.js](https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
-![Nuxt.js](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-**Backend & Database**
-
-
-![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-
-**DevOps & Tools**
-
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-![Ryan's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ryanmwakio&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ryanmwakio&layout=compact&theme=tokyonight&hide_border=true)
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ryanmwakio&theme=tokyonight&hide_border=true)
-
-</div>
-
----
-
-## ✍️ Dev Quote of the Day
-
-<div align="center">
-
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
-
-</div>
+          plugin_skyline_year: current-year
+          plugin_sponsors: yes
+          plugin_sponsors_past: yes
+          plugin_sponsors_sections: goal, list, about
+          plugin_sponsors_size: 24
+          plugin_sponsors_title: Sponsor Me!
+          plugin_sponsorships: yes
+          plugin_sponsorships_sections: amount, sponsorships
+          plugin_sponsorships_size: 24
+          plugin_stargazers: yes
+          plugin_stargazers_charts: yes
+          plugin_stargazers_charts_type: classic
+          plugin_stargazers_days: 14
+          plugin_stargazers_worldmap: yes
+          plugin_starlists: yes
+          plugin_starlists_languages: yes
+          plugin_starlists_limit: 2
+          plugin_starlists_limit_languages: 8
+          plugin_starlists_limit_repositories: 2
+          plugin_starlists_shuffle_repositories: yes
+          plugin_stars: yes
+          plugin_stars_limit: 4
+          plugin_support: yes
+          plugin_topics: yes
+          plugin_topics_limit: 15
+          plugin_topics_mode: starred
+          plugin_topics_sort: stars
+          plugin_traffic: yes
